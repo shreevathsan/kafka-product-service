@@ -43,7 +43,7 @@ public class ProductServiceImpl implements ProductService {
 //			}
 //		});
 
-		// Sending the message Synchronously
+		// Synchronous Communications to the Kafka Broker
 		SendResult<String, ProductCreatedEvent> result = kafkaTemplate
 				.send("product-created-events-topic", productId, productCreatedEvent).get();
 
